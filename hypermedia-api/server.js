@@ -36,13 +36,16 @@ app.get('/', (req, res) => {
 
 app.post('/message', async (req, res) => {
 
-
-    setTimeout(() => {
-        res.send(`<div><h3>Hello World</h3></div>`);
-
-    }, 5000);
+    res.send(`<div><h3>Hello World</h3></div>`);
 });
 
+app.post('/echopayload', async (req, res) => {
+
+    const email = req.body.email;
+    const pass = req.body.pass;
+
+    res.send(`<div><b>Email:</b> ${email}, <b>Password:</b> ${pass}</div>`);
+});
 app.post('/script', async (req, res) => {
 
 
@@ -65,13 +68,6 @@ app.post('/htmx', async (req, res) => {
     </div>`);
 });
 
-app.post('/echopayload', async (req, res) => {
-
-    const email = req.body.email;
-    const pass = req.body.pass;
-
-    res.send(`<div><b>Email:</b> ${email}, <b>Password:</b> ${pass}</div>`);
-});
 
 app.post('/upload', upload.single('file'), async (req, res) => {
     const filePath = req.file.path;
