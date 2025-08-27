@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/htmx.org@1.9.4"
+            integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV"
+            crossorigin="anonymous"></script>
+    <title>Out of bounds swap</title>
+
+</head>
+<body>
+
+    <!--    This will put the content outside the destination div-->
+    <button hx-post="http://localhost:1330/oob"
+            hx-target="#mainTarget"
+
+    >
+        Load Content
+    </button>
+
+    <div id="mainTarget">
+        Main Target
+    </div>
+
+    <div>
+        Some content
+    </div>
+
+    <div id="target2">
+
+    </div>
+
+</body>
+</html>

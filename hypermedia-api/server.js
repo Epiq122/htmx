@@ -78,8 +78,8 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 app.post('/oob', async (req, res) => {
 
     res.send(`<div>
-        <h3 id="target2">Hello World</h3>
-        This goes into the main target
+        <h3 id="target2" hx-swap-oob="true">Welcome to the show</h3>
+        **This goes into the main target**
     </div>`);
 });
 
