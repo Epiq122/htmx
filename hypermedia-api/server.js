@@ -37,7 +37,10 @@ app.get('/', (req, res) => {
 app.post('/message', async (req, res) => {
 
 
-    res.send(`<div><h3>Hello World</h3></div>`);
+    setTimeout(() => {
+        res.send(`<div><h3>Hello World</h3></div>`);
+
+    }, 5000);
 });
 
 app.post('/script', async (req, res) => {
