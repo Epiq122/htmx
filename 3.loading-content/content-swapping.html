@@ -8,26 +8,21 @@
     <script src="https://unpkg.com/htmx.org@1.9.4"
             integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV"
             crossorigin="anonymous"></script>
-    <title>Targeting Content Destination</title>
+    <title>Content Swapping</title>
 
 </head>
 <body>
+
+    <!--    This will put the content outside the destination div-->
     <button hx-post="http://localhost:1330/message"
-            hx-target="#destination">
+            hx-target="#destination"
+            hx-swap="outerHTML">
         Load Content
     </button>
-    <div class="response">
-
-    </div>
 
     <div id="destination">
 
     </div>
-    <button hx-post="http://localhost:1330/message"
-            hx-target=".destination">
-        Load Content
-    </button>
-
 
 </body>
 </html>
