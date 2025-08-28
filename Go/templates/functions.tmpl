@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Functions</title>
+</head>
+<body>
+    <h1>Template Functions</h1>
+
+    <h3>Items (GLOBAL FUNCTION)</h3>
+    <ul>
+        {{range .Items}}
+            <li>{{.}}</li>
+        {{end}}
+    </ul>
+
+    {{/*    GLOBAL FUNCTION GT = greater than */}}
+    <div>
+        {{if gt .Number 10}}
+            <b>Holy smokes that's a big number</b>
+
+        {{else}}
+            <i> LOL I knew it was smaller</i>
+        {{end}}
+    </div>
+
+    {{/*    CUSTOM functions*/}}
+    <div>
+        <p>
+            The Capitalized Name is: {{toUpper .Name}}
+        </p>
+    </div>
+
+    <div>
+        <p>
+            The formatted date is: {{formatDate .CurrentDate}}
+        </p>
+    </div>
+</body>
+</html>
