@@ -9,15 +9,15 @@
 </head>
 <body>
     <header>
-        {{template "headerFragment"}}
+        {{template "headerFragment" .}}
     </header>
 
     <main>
-        {{template "mainContentFragment"}}
+        {{template "mainContentFragment" .}}
     </main>
 
     <footer>
-        <p>Copyright 2024</p>
+        <p>contact {{ .Name}} <a href="https://www.google.ca">Google</a></p>
     </footer>
 </body>
 </html>

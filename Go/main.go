@@ -14,7 +14,17 @@ func main() {
 
 		tmpl := template.Must(template.ParseGlob("templates/*.tmpl"))
 
-		err := tmpl.ExecuteTemplate(w, "home.tmpl", nil)
+		data := struct {
+			Name        string
+			Title       string
+			Description string
+		}{
+			Name:        "Dr.Venkmin",
+			Title:       "Visitor",
+			Description: "Welcome to the Go web development slammmm piece.",
+		}
+
+		err := tmpl.ExecuteTemplate(w, "home.tmpl", data)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 		}
