@@ -18,10 +18,16 @@ func main() {
 			Name        string
 			Title       string
 			Description string
+			Socials     map[string]string
 		}{
 			Name:        "Dr.Venkmin",
 			Title:       "Visitor",
 			Description: "Welcome to the Go web development slammmm piece.",
+			Socials: map[string]string{
+				"GitHub":   "https://github.com ",
+				"Twitter":  "https://twitter.com/yourprofile",
+				"LinkedIn": "https://linkedin.com/in/yourprofile",
+			},
 		}
 
 		err := tmpl.ExecuteTemplate(w, "home.tmpl", data)

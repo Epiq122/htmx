@@ -18,6 +18,11 @@
 
     <footer>
         <p>contact {{ .Name}} <a href="https://www.google.ca">Google</a></p>
+        <ul>
+            {{range $key, $value := .Socials}}
+                <li><a href="{{$value}}">{{$key}}</a></li>
+            {{end}}
+        </ul>
     </footer>
 </body>
 </html>
