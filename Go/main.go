@@ -11,11 +11,10 @@ import (
 func main() {
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		//tmpl := template.Must(template.ParseFiles("home.tmpl"))
-		tmpl := template.Must(template.ParseFiles("message.tmpl"))
 
-		//err := tmpl.Execute(w, nil)
-		err := tmpl.ExecuteTemplate(w, "greetingFragment", nil)
+		tmpl := template.Must(template.ParseGlob("templates/*.tmpl"))
+
+		err := tmpl.ExecuteTemplate(w, "home.tmpl", nil)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 		}
