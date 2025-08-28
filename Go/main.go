@@ -19,6 +19,7 @@ func main() {
 			Title       string
 			Description string
 			Socials     map[string]string
+			Features    []string
 		}{
 			Name:        "Dr.Venkmin",
 			Title:       "Visitor",
@@ -27,6 +28,11 @@ func main() {
 				"GitHub":   "https://github.com ",
 				"Twitter":  "https://twitter.com/yourprofile",
 				"LinkedIn": "https://linkedin.com/in/yourprofile",
+			},
+			Features: []string{
+				"Fast and Efficient",
+				"Scalable",
+				"Easy to Learn",
 			},
 		}
 

@@ -10,6 +10,13 @@
 <body>
     <header>
         {{template "headerFragment" .}}
+
+        <h3>Features</h3>
+        <ul>
+            {{range .Features}}
+                <li>{{.}}</li>
+            {{end}}
+        </ul>
     </header>
 
     <main>
